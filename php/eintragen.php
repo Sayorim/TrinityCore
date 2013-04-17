@@ -41,8 +41,9 @@ if ($menge2 == 0)
 {
 	$entry = "INSERT INTO account (username, sha_pass_hash, email, last_ip, expansion) VALUES (UPPER('".$mysqluser."'), SHA1(CONCAT(UPPER('".$mysqluser."'),':',UPPER('".$pw."'))),'".$email."','".$ip."','".$expansion."')";
 	$enter = mysql_query($entry);
-
-if ($enter == true)
+	$prem = "INSERT INTO rbac_account_groups VALUES ((SELECT id FROM account WHERE username = '".$mysqluser."'), 1, -1)";
+	$enter2 = mysql_query($prem)or die(mysql_error()) ;
+if ($enter == true && $enter2 == true)
 {
 	echo "<body text=\"61100c\" bgcolor=\"000\" link=\"61100c\" alink=\"61100c\" vlink=\"61100c\">
 	<center>
