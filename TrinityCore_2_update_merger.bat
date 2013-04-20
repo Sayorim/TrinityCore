@@ -21,7 +21,7 @@ for /F "tokens=*" %%L in (%%F) do (
 
 
 (for %%F in (sql\updates\auth\*auth*.sql) do ^
-if NOT "%%F" == %RealmdUpdates% ^
+if NOT "%%F" == %AuthUpdates% ^
 for /F "tokens=*" %%L in (%%F) do (
   echo %%L
 )) > %AuthUpdates%
