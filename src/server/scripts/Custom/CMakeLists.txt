@@ -10,6 +10,7 @@
 
 set(scripts_STAT_SRCS
   ${scripts_STAT_SRCS}
+	CUSTOM/NPC_Transmogrify.cpp
 )
 
 message("  -> Prepared: Custom")
